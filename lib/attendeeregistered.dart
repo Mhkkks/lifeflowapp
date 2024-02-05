@@ -39,6 +39,7 @@ class _AttendeeRegisteredEventsState extends State<AttendeeRegisteredEvents> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 255, 177, 177),
       appBar: AppBar(
         title: Text("Registered Events",
             style: TextStyle(fontFamily: 'Salsa', color: Colors.white70)),

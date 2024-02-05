@@ -25,7 +25,7 @@ class AttendeeProfileScreen extends StatelessWidget {
             fontFamily: 'Salsa',
           ),
         ),
-        backgroundColor: Color(0xff9B61BD),
+        backgroundColor: Color.fromARGB(255, 189, 0, 0),
         automaticallyImplyLeading: false,
       ),
       body: Container(
@@ -91,7 +91,7 @@ class AttendeeProfileScreen extends StatelessWidget {
                   );
                 },
                 style: TextButton.styleFrom(
-                  backgroundColor: Colors.deepPurpleAccent,
+                  backgroundColor: Color.fromARGB(255, 189, 0, 0),
                   foregroundColor: Colors.white,
                 ),
                 child: const Text("Go to Home",
@@ -128,7 +128,7 @@ class OrganizationProfileScreen extends StatelessWidget {
             fontFamily: 'Salsa',
           ),
         ),
-        backgroundColor: Color(0xff9B61BD),
+        backgroundColor: Color.fromARGB(255, 189, 0, 0),
         automaticallyImplyLeading: false,
       ),
       body: Container(
@@ -192,7 +192,7 @@ class OrganizationProfileScreen extends StatelessWidget {
                   );
                 },
                 style: TextButton.styleFrom(
-                  backgroundColor: Colors.deepPurpleAccent,
+                  backgroundColor: Color.fromARGB(255, 189, 0, 0),
                   foregroundColor: Colors.white,
                 ),
                 child: const Text("Go to Home",

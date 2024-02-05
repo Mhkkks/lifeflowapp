@@ -141,7 +141,7 @@ class _OrgFormState extends State<OrgForm> {
                   "Create Profile",
                   style: TextStyle(
                     fontSize: 22,
-                    color: Colors.white70,
+                    color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
               ),

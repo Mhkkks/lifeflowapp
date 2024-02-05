@@ -154,12 +154,15 @@ class _EventPageState extends State<EventPage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 255, 177, 177),
       appBar: AppBar(
         title: Text(
           "Events Details",
-          style: TextStyle(fontFamily: 'Salsa', color: Colors.white70),
+          style: TextStyle(
+              fontFamily: 'Salsa',
+              color: const Color.fromARGB(255, 255, 255, 255)),
         ),
-        backgroundColor: Color(0xff9B61BD),
+        backgroundColor: Color.fromARGB(255, 189, 0, 0),
       ),
       body: Container(
         child: Center(
@@ -203,7 +206,7 @@ class _EventPageState extends State<EventPage> {
                       }
                     },
                     style: TextButton.styleFrom(
-                      backgroundColor: Colors.deepPurpleAccent,
+                      backgroundColor: Color.fromARGB(255, 189, 0, 0),
                       foregroundColor: Colors.white,
                     ),
                     child: Text("Register for Event",
@@ -225,14 +228,14 @@ class _EventPageState extends State<EventPage> {
                       }
                     },
                     style: TextButton.styleFrom(
-                        backgroundColor: Colors.deepPurpleAccent,
+                        backgroundColor: Color.fromARGB(255, 189, 0, 0),
                         foregroundColor: Colors.white),
                     child: Text("Update Event"),
                   ),
                   TextButton(
                     onPressed: deleteData,
                     style: TextButton.styleFrom(
-                        backgroundColor: Colors.deepPurpleAccent,
+                        backgroundColor: Color.fromARGB(255, 189, 0, 0),
                         foregroundColor: Colors.white),
                     child: Text("Delete Event",
                         style: TextStyle(

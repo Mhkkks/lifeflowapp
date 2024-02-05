@@ -91,7 +91,7 @@ class MyHomePage extends StatelessWidget {
         }
       },
       style: TextButton.styleFrom(
-        backgroundColor: Colors.deepPurpleAccent,
+        backgroundColor: Color.fromARGB(255, 182, 23, 23),
         foregroundColor: Colors.white,
       ),
       child: const Text("Show Registration Info",
@@ -102,181 +102,161 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 255, 177, 177),
       appBar: AppBar(
-        title: const Text("Event Hub",
+        title: const Text("LifeFlow",
             style: TextStyle(
               fontWeight: FontWeight.w200,
               fontFamily: 'Salsa',
-              color: Colors.white70,
+              color: Color.fromARGB(255, 255, 255, 255),
             )),
-        backgroundColor: Color(0xff9B61BD),
+        backgroundColor: Color.fromARGB(255, 179, 13, 13),
         elevation: 10.0,
-        shadowColor: Color(0xffB287BB),
+        shadowColor: Color.fromARGB(255, 223, 8, 73),
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/logo.jpeg'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Center(
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 20,
+      body: Center(
+        child: Column(
+          children: [
+            Container(
+                decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('images/logo.jpeg'),
+                fit: BoxFit.cover,
               ),
-              const Text(
-                "Eventify",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Salsa',
-                    fontSize: 50,
-                    color: Colors.deepPurple),
-              ),
-              const Text(
-                "where every event finds its stage",
-                style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'Salsa',
-                    fontSize: 20,
-                    color: Colors.deepPurple),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Padding(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  buildRegistrationInfoButton(context),
-                  TextButton(
-                    onPressed: () {
-                      // Check if the user is an attendee
-                      if (user.userType == 'Attendee') {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) => AlertDialog(
-                            title: Text('Error'),
-                            content: Text(
-                                'As an attendee, you cannot add events. Only organizations can add events.'),
-                            actions: <Widget>[
-                              TextButton(
-                                onPressed: () => Navigator.pop(context),
-                                child: Text('OK'),
-                              ),
-                            ],
-                          ),
-                        );
-                      } else {
-                        // Allow organization to add events
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MyForm(user: user)));
-                      }
-                    },
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.deepPurpleAccent,
-                      foregroundColor: Colors.white,
+            )),
+            const SizedBox(
+              height: 50,
+            ),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+            ),
+            buildRegistrationInfoButton(context),
+            const SizedBox(
+              height: 50,
+            ),
+            TextButton(
+              onPressed: () {
+                // Check if the user is an attendee
+                if (user.userType == 'Attendee') {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      title: Text('Error'),
+                      content: Text(
+                          'As an attendee, you cannot add events. Only organizations can add events.'),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: Text('OK'),
+                        ),
+                      ],
                     ),
-                    child: const Text("Add Event",
-                        style: TextStyle(fontFamily: 'Salsa')),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => EventListPage(user: user)));
-                    },
-                    style: TextButton.styleFrom(
-                        backgroundColor: Colors.deepPurpleAccent,
-                        foregroundColor: Colors.white),
-                    child: const Text("Show Events",
-                        style: TextStyle(
-                          fontFamily: 'Salsa',
-                        )),
-                  ),
-                ],
+                  );
+                } else {
+                  // Allow organization to add events
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MyForm(user: user)));
+                }
+              },
+              style: TextButton.styleFrom(
+                backgroundColor: Color.fromARGB(255, 189, 0, 0),
+                foregroundColor: Colors.white,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      if (user.userType == 'Attendee') {
-                        // Allow only attendees to view registered events
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  AttendeeRegisteredEvents(user: user)),
-                        );
-                      } else {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) => AlertDialog(
-                            title: Text('Error'),
-                            content: Text(
-                                'Only attendees can view registered events. Organizations cannot view registered events.'),
-                            actions: <Widget>[
-                              TextButton(
-                                onPressed: () => Navigator.pop(context),
-                                child: Text('OK'),
-                              ),
-                            ],
-                          ),
-                        );
-                      }
-                    },
-                    style: TextButton.styleFrom(
-                        backgroundColor: Colors.deepPurpleAccent,
-                        foregroundColor: Colors.white),
-                    child: const Text("View Registered Events",
-                        style: TextStyle(fontFamily: 'Salsa')),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      if (user.userType == 'Org') {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  OrganizationEventsPage(user: user)),
-                        );
-                      } else {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) => AlertDialog(
-                            title: Text('Error'),
-                            content: Text(
-                                'Only organizations can view their events.'),
-                            actions: <Widget>[
-                              TextButton(
-                                onPressed: () => Navigator.pop(context),
-                                child: Text('OK'),
-                              ),
-                            ],
-                          ),
-                        );
-                      }
-                    },
-                    style: TextButton.styleFrom(
-                        backgroundColor: Colors.deepPurpleAccent,
-                        foregroundColor: Colors.white),
-                    child: const Text("View Their Events",
-                        style: TextStyle(fontFamily: 'Salsa')),
-                  ),
-                ],
-              ),
-            ],
-          ),
+              child: const Text("Add BloodDonation Camp details",
+                  style: TextStyle(fontFamily: 'Salsa')),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => EventListPage(user: user)));
+              },
+              style: TextButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 189, 0, 0),
+                  foregroundColor: Colors.white),
+              child: const Text("Show Donation Details",
+                  style: TextStyle(
+                    fontFamily: 'Salsa',
+                  )),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            TextButton(
+              onPressed: () {
+                if (user.userType == 'Attendee') {
+                  // Allow only attendees to view registered events
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            AttendeeRegisteredEvents(user: user)),
+                  );
+                } else {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      title: Text('Error'),
+                      content: Text(
+                          'Only users can view registered events. Organizations cannot view registered events.'),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: Text('OK'),
+                        ),
+                      ],
+                    ),
+                  );
+                }
+              },
+              style: TextButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 189, 0, 0),
+                  foregroundColor: Colors.white),
+              child: const Text("View Registered Camps",
+                  style: TextStyle(fontFamily: 'Salsa')),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            TextButton(
+              onPressed: () {
+                if (user.userType == 'Org') {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            OrganizationEventsPage(user: user)),
+                  );
+                } else {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      title: Text('Error'),
+                      content:
+                          Text('Only organizations can view their events.'),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: Text('OK'),
+                        ),
+                      ],
+                    ),
+                  );
+                }
+              },
+              style: TextButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 189, 0, 0),
+                  foregroundColor: Colors.white),
+              child: const Text("View Their Events",
+                  style: TextStyle(fontFamily: 'Salsa')),
+            ),
+          ],
         ),
       ),
     );

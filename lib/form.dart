@@ -29,15 +29,16 @@ class _MyFormState extends State<MyForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color.fromARGB(255, 255, 177, 177),
         appBar: AppBar(
           title: Text(
             "Event Registration",
             style: TextStyle(
-              color: Colors.white70,
+              color: const Color.fromARGB(255, 255, 255, 255),
               fontFamily: 'Salsa',
             ),
           ),
-          backgroundColor: Color(0xff9B61BD),
+          backgroundColor: Color.fromARGB(255, 189, 0, 0),
         ),
         body: Container(
           child: Column(
@@ -106,7 +107,7 @@ class _MyFormState extends State<MyForm> {
                 onPressed: addEvent,
                 style: ElevatedButton.styleFrom(
                   elevation: 10,
-                  backgroundColor: Color(0xffAE72FD),
+                  backgroundColor: Color.fromARGB(255, 189, 0, 0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
@@ -116,7 +117,7 @@ class _MyFormState extends State<MyForm> {
                   "Add Event",
                   style: TextStyle(
                     fontSize: 22,
-                    color: Colors.white70,
+                    color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
               ),

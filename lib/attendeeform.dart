@@ -67,6 +67,7 @@ class _AttendeeFormState extends State<AttendeeForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color.fromARGB(255, 255, 177, 177),
         appBar: AppBar(
           title: Text(
             "Attendee Form",
@@ -98,7 +99,7 @@ class _AttendeeFormState extends State<AttendeeForm> {
                   icon: Icon(Icons.label),
                   border: OutlineInputBorder(),
                 ),
-                controller: _pc,
+                controller: _pn,
               ),
               const SizedBox(
                 height: 20,
@@ -129,7 +130,7 @@ class _AttendeeFormState extends State<AttendeeForm> {
                 onPressed: addUser,
                 style: ElevatedButton.styleFrom(
                   elevation: 10,
-                  backgroundColor: Color(0xffAE72FD),
+                  backgroundColor: Color.fromARGB(255, 189, 0, 0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),

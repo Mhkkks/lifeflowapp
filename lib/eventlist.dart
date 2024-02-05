@@ -40,12 +40,15 @@ class _EventListPageState extends State<EventListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 255, 177, 177),
       appBar: AppBar(
         title: Text(
           "Events List",
-          style: TextStyle(fontFamily: 'Salsa', color: Colors.white70),
+          style: TextStyle(
+              fontFamily: 'Salsa',
+              color: const Color.fromARGB(255, 255, 255, 255)),
         ),
-        backgroundColor: Color(0xff9B61BD),
+        backgroundColor: Color.fromARGB(255, 189, 0, 0),
       ),
       body: Stack(
         children: [
@@ -74,7 +77,7 @@ class _EventListPageState extends State<EventListPage> {
                           event['name'] + ' by ' + event['org'],
                           style: TextStyle(
                               fontWeight: FontWeight.w400,
-                              color: Color(0xff4C2A85)),
+                              color: Color.fromARGB(255, 189, 0, 0)),
                         ),
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

@@ -15,17 +15,17 @@ class RegistrationPage extends StatefulWidget {
 class _RegistrationPageState extends State<RegistrationPage> {
   late TextEditingController nameController;
   late TextEditingController bgController;
-  late TextEditingController pcController;
   late TextEditingController pnController;
+  late TextEditingController pcController;
   late TextEditingController howDidYouKnowController;
 
   @override
   void initState() {
     super.initState();
     nameController = TextEditingController();
+    pnController = TextEditingController();
     bgController = TextEditingController();
     pcController = TextEditingController();
-    pnController = TextEditingController();
     howDidYouKnowController = TextEditingController();
   }
 
@@ -63,8 +63,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
   void register() async {
     try {
       if (nameController.text.isEmpty ||
-          bgController.text.isEmpty ||
           pnController.text.isEmpty ||
+          bgController.text.isEmpty ||
           howDidYouKnowController.text.isEmpty ||
           pcController.text.isEmpty) {
         print("Fill in all the details");
@@ -74,9 +74,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
       await FirebaseFirestore.instance.collection('attendeeRegistrations').add({
         'eventName': widget.eventData['name'],
         'attendeeName': nameController.text,
+        'pn': pnController.text,
         'bg': bgController.text,
         'pc': pcController.text,
-        'pn': pnController.text,
         'howDidYouKnow': howDidYouKnowController.text,
       });
 
@@ -105,8 +105,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Registration",
-            style: TextStyle(fontFamily: 'Salsa', color: Colors.white70)),
-        backgroundColor: Color(0xff9B61BD),
+            style: TextStyle(
+                fontFamily: 'Salsa',
+                color: const Color.fromARGB(255, 255, 255, 255))),
+        backgroundColor: Color.fromARGB(255, 189, 0, 0),
       ),
       body: Container(
         child: Center(
@@ -153,7 +155,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 ),
                 TextFormField(
                   decoration: const InputDecoration(
-                    labelText: "PinCode",
+                    labelText: "pc",
                     icon: Icon(Icons.label),
                     border: OutlineInputBorder(),
                   ),
@@ -175,10 +177,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   onPressed: checkRegistration,
                   //register,
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.deepPurpleAccent,
+                    primary: Color.fromARGB(255, 189, 0, 0),
                     onPrimary: Colors.white,
                   ),
-                  child: Text('Register',
+                  child: Text('Register to Donate',
                       style:
                           TextStyle(fontFamily: 'Salsa', color: Colors.white)),
                 ),

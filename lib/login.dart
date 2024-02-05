@@ -21,13 +21,14 @@ class _LoginState extends State<Login> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 255, 177, 177),
       appBar: AppBar(
         title: const Text(
           "Login",
-          style: TextStyle(color: Colors.white70),
+          style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
         ),
         automaticallyImplyLeading: false,
-        backgroundColor: Color(0xff9B61BD),
+        backgroundColor: Color.fromARGB(255, 189, 0, 0),
       ),
       body: Stack(
         children: [

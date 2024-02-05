@@ -64,10 +64,13 @@ class _OrganizationEventsPageState extends State<OrganizationEventsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 255, 177, 177),
       appBar: AppBar(
         title: Text("Organization Events",
-            style: TextStyle(fontFamily: 'Salsa', color: Colors.white70)),
-        backgroundColor: Color(0xff9B61BD),
+            style: TextStyle(
+                fontFamily: 'Salsa',
+                color: const Color.fromARGB(255, 255, 255, 255))),
+        backgroundColor: Color.fromARGB(255, 189, 0, 0),
       ),
       body: Stack(
         children: [
