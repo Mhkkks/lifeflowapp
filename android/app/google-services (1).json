@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "705643751438",
+    "project_id": "lifeflow-a1947",
+    "storage_bucket": "lifeflow-a1947.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705643751438:android:c952b212433855f2b7b45f",
+        "android_client_info": {
+          "package_name": "com.example.lifeflowapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHL-yKRyawxXU33HzxhB_pLi0xJSJKheU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
